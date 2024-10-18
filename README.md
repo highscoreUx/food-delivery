@@ -174,4 +174,7 @@
 | ------------------- | ---------------- | ---------- | --------- |
 | **Product Manager** | [Your Name]      | DD/MM/YYYY |           |
 | **Tech Lead**       | [Tech Lead Name] | DD/MM/YYYY |           |
+| **UI/UX Designer**  | Abdulbasit Oyesiji | 18/10/2024 | A.O           |
+| **UI/UX Designer**  | [Designer Name]  | DD/MM/YYYY |           |
+| **UI/UX Designer**  | [Designer Name]  | DD/MM/YYYY |           |
 | **UI/UX Designer**  | [Designer Name]  | DD/MM/YYYY |           |
