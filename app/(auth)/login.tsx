@@ -5,21 +5,22 @@ import Button from "@/components/button/Button";
 import { styled } from "nativewind";
 import LabledInput from "@/components/labeledInput/LabledInput";
 import { Link } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 const StyledText = styled(Text);
 const StyledView = styled(View);
 
-const signUp = () => {
+const login = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
         <StyledView className="flex-1 mt-6" style={{ gap: 16 }}>
           <StyledView className=" max-w-[269px]" style={{ gap: 8 }}>
-            <StyledText className="font-semibold text-3xl ">Create Free Account</StyledText>
+            <StyledText className="font-semibold text-3xl ">Login Yo Your Account</StyledText>
             <StyledText className="text-sm text-black-500">
-              Sign up to explore diverse culinary options or{" "}
-              <Link href={"/(auth)/login"} className="underline text-black-900 underline-offset-2">
-                Login to your account
+              Don’t have an account with NaijaEats yet?{" "}
+              <Link href={"/(auth)/signUp"} className="underline text-black-900 underline-offset-2">
+                Create free account
               </Link>
             </StyledText>
           </StyledView>
@@ -40,14 +41,20 @@ const signUp = () => {
 
           <StyledView style={{ gap: 16 }}>
             <LabledInput hasLabel label="Email" placeholder="user@example.com" type="email" />
-            <LabledInput hasLabel label="Phone Number" placeholder="+234" type="number" />
+
             <LabledInput hasLabel label="Password" placeholder="Enter Password" type="password" />
+            <Link
+              href={"/(auth)/resetPassword"}
+              className="underline text-black-900 underline-offset-2"
+            >
+              Forgot Password?
+            </Link>
           </StyledView>
 
           <StyledView style={{ gap: 8 }}>
-            <Button>Create account</Button>
+            <Button>Login</Button>
             <StyledText className="text-sm text-black-500">
-              By creating an account, you agree to all of NaijaEats{" "}
+              By Logging in to your account, you agree to all of NaijaEats{" "}
               <Link
                 href={"/(auth)/termsOfService"}
                 className="underline text-black-900 underline-offset-2"
@@ -62,4 +69,4 @@ const signUp = () => {
   );
 };
 
-export default signUp;
+export default login;

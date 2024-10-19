@@ -1,16 +1,19 @@
 import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from "react-native";
-import React from "react";
+import React, { ComponentProps } from "react";
 import { styled } from "nativewind";
 import { cva, VariantProps } from "class-variance-authority";
+import { Ionicons } from "@expo/vector-icons";
 
 interface IButtonProps extends VariantProps<typeof button> {
   children: React.ReactNode;
+  hasIcon?: boolean;
+  iconName?: ComponentProps<typeof Ionicons>["name"];
 }
 
 const StyledTouchableOpacity = styled(TouchableOpacity);
 const StyledText = styled(Text);
 
-const button = cva("px-4 py-2 rounded-lg items-center justify-center", {
+const button = cva("px-4 py-2 rounded-lg items-center justify-center flex-row", {
   variants: {
     variant: {
       primary: "bg-primary-500",
@@ -23,7 +26,7 @@ const button = cva("px-4 py-2 rounded-lg items-center justify-center", {
     textCol: {
       primary: "text-primary-50",
       secondary: "text-primary-900 bg-transparent",
-      ghost: "text-black-900 bg-transparent",
+      ghost: "text-black-900 bg-transparent ",
     },
   },
   defaultVariants: {
@@ -32,9 +35,17 @@ const button = cva("px-4 py-2 rounded-lg items-center justify-center", {
   },
 });
 
-const Button = ({ children, variant, fullWidth, textCol }: IButtonProps) => {
+const Button = ({
+  children,
+  variant,
+  fullWidth,
+  textCol,
+  hasIcon = false,
+  iconName,
+}: IButtonProps) => {
   return (
     <StyledTouchableOpacity className={button({ variant, fullWidth })}>
+      {hasIcon && <Ionicons name={iconName} size={16} />}
       <StyledText className={button({ textCol })}>{children}</StyledText>
     </StyledTouchableOpacity>
   );

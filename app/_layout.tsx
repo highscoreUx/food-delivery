@@ -15,5 +15,6 @@ export default Rootlayout;
 const styles = StyleSheet.create({
   content: {
     marginHorizontal: 16,
+    backgroundColor: "#ffffff",
   },
 });

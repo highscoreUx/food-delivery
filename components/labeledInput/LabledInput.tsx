@@ -9,6 +9,7 @@ interface ILabeledInput {
   type?: "email" | "text" | "number" | "password";
   handleOnChange?: () => void;
   value?: any;
+  autoFocus?: boolean;
 }
 
 const LabledInput = ({
@@ -17,6 +18,7 @@ const LabledInput = ({
   placeholder,
   type = "text",
   value,
+  autoFocus = false,
   handleOnChange,
 }: ILabeledInput) => {
   const StyledText = styled(Text);
@@ -28,7 +30,7 @@ const LabledInput = ({
         return "email-address";
 
       case "number":
-        return "number-pad";
+        return "phone-pad";
 
       default:
         return "default";
@@ -44,6 +46,7 @@ const LabledInput = ({
         secureTextEntry={type === "password"}
         value={value}
         onChangeText={handleOnChange}
+        autoFocus={autoFocus}
       />
     </StyledView>
   );
